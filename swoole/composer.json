@@ -1,0 +1,16 @@
+{
+    "name": "gotzmann/php-russia-2021",
+    "description": "",
+  	"license": "MIT",
+    "keywords": ["php"],
+    "homepage": "https://github.com/gotzmann/...",
+    "authors": [{
+   	    "name": "Serge Gotsuliak",
+        "email": "sgotsulyak@gmail.com"
+    }],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": { "App\\": "src/" }
+    }
+}

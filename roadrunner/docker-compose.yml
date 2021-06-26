@@ -4,13 +4,12 @@ services:
   server:
     build:
       context: .
-      dockerfile: Dockerfile.roadrunner
+      dockerfile: roadrunner.Dockerfile
     ports:
       - 80:80
-    environment:
-      - LISTEN_HOST=0.0.0.0
-      - LISTEN_PORT=80
-      - GOROOT=/usr/local/go
-      - GOPATH=/go
-      - GOBIN=/go/bin
+
+  wrk:
+    build:
+      context: ../wrk
+      dockerfile: wrk.Dockerfile
 

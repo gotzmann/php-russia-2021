@@ -3,15 +3,15 @@ declare(strict_types=1);
 
 namespace App\Handlers;
 
-use Swoole\HTTP\Request;
-use Swoole\HTTP\Response;
+use Nyholm\Psr7\ServerRequest as Request;
+use Nyholm\Psr7\Response;
 use Illuminate\Database\Capsule\Manager as ORM;
 
 class Handler
 {
     public function listProducts(Request $request, Response $response)
-    {
-        $body = $request->getContent();
+    {echo "\nHHH";
+        $body = (string) $request->getBody();
         $params = json_decode($body);
         $brand = $params->brand ?? '';
 
@@ -24,8 +24,12 @@ class Handler
 
         $json = json_encode([ 'products' => $products ]);
 
-        $response->header('Content-Type', 'application/json; charset=utf-8');
-        $response->end($json); // Используем end вместо write, чтобы исключить chunked transfer mode
+        $response
+            ->getBody()
+            ->write($json);
+
+        return $response
+            ->withHeader('Content-Type', 'application/json; charset=utf-8');
     }
 }
 

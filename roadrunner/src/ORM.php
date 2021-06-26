@@ -14,10 +14,12 @@ class ORM
     public static function init()
     {
         self::$pdo = new \PDO(
-            'pgsql:host=docker;dbname=hello_world',
+            'pgsql:host=tfb-database;dbname=hello_world',
+//	    	'pgsql:host=192.168.99.1;dbname=hello_world',
             'benchmarkdbuser',
             'benchmarkdbpass',
             [
+//              \PDO::ATTR_CASE => \PDO::CASE_NATURAL,
                 \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
                 \PDO::ATTR_EMULATE_PREPARES => false
             ]

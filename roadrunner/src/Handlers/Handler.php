@@ -10,7 +10,7 @@ use Illuminate\Database\Capsule\Manager as ORM;
 class Handler
 {
     public function listProducts(Request $request, Response $response)
-    {echo "\nHHH";
+    {
         $body = (string) $request->getBody();
         $params = json_decode($body);
         $brand = $params->brand ?? '';

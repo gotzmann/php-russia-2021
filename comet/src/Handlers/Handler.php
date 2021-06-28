@@ -26,3 +26,4 @@ class Handler
             ->with([ 'products' => $products ]);
     }
 }
+

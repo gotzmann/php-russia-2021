@@ -25,7 +25,11 @@ class Handler
         $json = json_encode([ 'products' => $products ]);
 
         $response->header('Content-Type', 'application/json; charset=utf-8');
-        $response->end($json); // Используем end вместо write, чтобы исключить chunked transfer mode
+
+        // Используем end вместо write, чтобы исключить chunked transfer mode
+        $response->end($json);
     }
 }
+
+
 

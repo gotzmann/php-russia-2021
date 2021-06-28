@@ -26,5 +26,4 @@ RUN composer install --optimize-autoloader --classmap-authoritative --no-dev
 RUN ./vendor/bin/rr get-binary
 RUN ["chmod", "+x", "./rr"]
 
-#CMD tail -f /dev/null
 CMD ./rr serve

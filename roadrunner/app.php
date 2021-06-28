@@ -43,7 +43,9 @@ $worker = new RoadRunner\Http\PSR7Worker($worker, $psrFactory, $psrFactory, $psr
 
 while ($request = $worker->waitRequest()) {
     try {
-        // Simple routing
+
+        // --- Simple routing
+
         $method = $request->getMethod();
         $path = $request->getURI()->getPath();
 

@@ -29,3 +29,4 @@ WORKDIR /var/www
 RUN composer install --optimize-autoloader --classmap-authoritative --no-dev
 
 CMD php app.php start
+
